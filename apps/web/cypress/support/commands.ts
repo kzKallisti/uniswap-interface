@@ -76,13 +76,13 @@ Cypress.Commands.overwrite(
     if (flagsOn.length > 0) {
       overrideParams.append(
         'featureFlagOverride',
-        flagsOn.map((flag) => getFeatureFlagName(flag, FeatureFlagClient.Web)).join(',')
+        flagsOn.map((flag) => getFeatureFlagName(flag, FeatureFlagClient.Web)).join(','),
       )
     }
     if (flagsOff.length > 0) {
       overrideParams.append(
         'featureFlagOverrideOff',
-        flagsOn.map((flag) => getFeatureFlagName(flag, FeatureFlagClient.Web)).join(',')
+        flagsOn.map((flag) => getFeatureFlagName(flag, FeatureFlagClient.Web)).join(','),
       )
     }
 
@@ -93,8 +93,8 @@ Cypress.Commands.overwrite(
           [...overrideParams.entries()].length === 0
             ? url
             : url.includes('?')
-            ? `${url}&${overrideParams.toString()}`
-            : `${url}?${overrideParams.toString()}`,
+              ? `${url}&${overrideParams.toString()}`
+              : `${url}?${overrideParams.toString()}`,
         onBeforeLoad(win) {
           options?.onBeforeLoad?.(win)
 
@@ -106,9 +106,9 @@ Cypress.Commands.overwrite(
           win.ethereum = provider
           win.Cypress.eagerlyConnect = options?.eagerlyConnect ?? true
         },
-      })
+      }),
     )
-  }
+  },
 )
 
 Cypress.Commands.add('waitForAmplitudeEvent', (eventName, requiredProperties) => {

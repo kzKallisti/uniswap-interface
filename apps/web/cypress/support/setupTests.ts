@@ -32,7 +32,7 @@ beforeEach(() => {
       }),
       {
         'origin-country': 'US',
-      }
+      },
     )
 
     Cypress.env('amplitudeEventCache').push(...req.body.events)
@@ -57,7 +57,7 @@ function logJsonRpc(req: CyHttpMessages.IncomingHttpRequest) {
     autoEnd: false,
     name: req.body.method,
     message: req.body.params?.map((param: any) =>
-      typeof param === 'object' ? '{...}' : param?.toString().substring(0, 10)
+      typeof param === 'object' ? '{...}' : param?.toString().substring(0, 10),
     ),
   })
   req.on('after:response', (res) => {

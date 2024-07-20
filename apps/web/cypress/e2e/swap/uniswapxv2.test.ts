@@ -178,7 +178,7 @@ describe('UniswapX v2', () => {
 
       // Verify insufficient funds
       cy.intercept(OrderStatusEndpoint, { fixture: 'uniswapx-v2/insufficientFundsStatusResponse.json' }).as(
-        'orderStatusInsufficient'
+        'orderStatusInsufficient',
       )
       cy.wait('@orderStatusInsufficient')
       cy.contains('Insufficient balance')
@@ -204,7 +204,7 @@ describe('UniswapX v2', () => {
 
       // Verify cancellation
       cy.intercept(OrderStatusEndpoint, { fixture: 'uniswapx-v2/cancelledStatusResponse.json' }).as(
-        'orderStatusCancelled'
+        'orderStatusCancelled',
       )
       cy.wait('@orderStatusCancelled')
       cy.contains('Swap cancelled')
@@ -250,7 +250,7 @@ describe('UniswapX v2', () => {
 
         // Verify fill
         cy.intercept(OrderStatusEndpoint, { fixture: 'uniswapx-v2/expiredStatusResponse.json' }).as(
-          'orderStatusExpired'
+          'orderStatusExpired',
         )
         cy.wait('@orderStatusExpired')
         cy.get(getTestSelector('offchain-activity-modal')).contains('Order expired')

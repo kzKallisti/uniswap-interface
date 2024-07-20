@@ -187,7 +187,7 @@ describe('UniswapX v1', () => {
 
       // Verify insufficient funds
       cy.intercept(OrderStatusEndpoint, { fixture: 'uniswapx/insufficientFundsStatusResponse.json' }).as(
-        'orderStatusInsufficient'
+        'orderStatusInsufficient',
       )
       cy.wait('@orderStatusInsufficient')
       cy.contains('Insufficient balance')

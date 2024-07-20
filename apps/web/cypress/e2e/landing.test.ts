@@ -84,7 +84,7 @@ describe('Landing Page', () => {
         }),
         {
           'origin-country': 'GB',
-        }
+        },
       )
     })
     cy.visit('/swap')

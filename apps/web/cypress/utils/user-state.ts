@@ -14,6 +14,6 @@ export function setInitialUserState(win: Cypress.AUTWindow, state: UserState) {
     'redux/persist:interface',
     JSON.stringify({
       user: state,
-    })
+    }),
   )
 }

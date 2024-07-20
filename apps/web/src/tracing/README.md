@@ -41,7 +41,7 @@ Modifying Sentry events is done on a per-event basis, and should be manually tes
 - Enable the ["localhost (for testing only)"](https://sentry.io/settings/projects/interface/keys/).
 - Turn off the [inbound filter](https://sentry.io/settings/projects/interface/filters/data-filters/) for localhost events.
 
-*Make sure to turn the inbound filter back on and to disable the "localhost" key when you are done.*
+_Make sure to turn the inbound filter back on and to disable the "localhost" key when you are done._
 
 To test an unhandled error or rejection, you just need to create one in the console:
 

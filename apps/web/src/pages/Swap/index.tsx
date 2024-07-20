@@ -8,8 +8,6 @@ import { useSupportedChainId } from 'constants/chains'
 import { useScreenSize } from 'hooks/screenSize'
 import { useAccount } from 'hooks/useAccount'
 import { BuyForm } from 'pages/Swap/Buy/BuyForm'
-import { LimitFormWrapper } from 'pages/Swap/Limit/LimitForm'
-import { SendForm } from 'pages/Swap/Send/SendForm'
 import { SwapForm } from 'pages/Swap/SwapForm'
 import { ReactNode } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -117,10 +115,6 @@ export function Swap({
                 <SwapHeader compact={compact || !screenSize.sm} syncTabToUrl={syncTabToUrl} />
                 {currentTab === SwapTab.Swap && (
                   <SwapForm onCurrencyChange={onCurrencyChange} disableTokenInputs={disableTokenInputs} />
-                )}
-                {currentTab === SwapTab.Limit && <LimitFormWrapper onCurrencyChange={onCurrencyChange} />}
-                {currentTab === SwapTab.Send && (
-                  <SendForm disableTokenInputs={disableTokenInputs} onCurrencyChange={onCurrencyChange} />
                 )}
                 {currentTab === SwapTab.Buy && forAggregatorEnabled && (
                   <BuyForm disabled={disableTokenInputs || !isConnected} />

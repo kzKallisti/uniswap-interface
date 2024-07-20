@@ -13,10 +13,12 @@ Cypress opens its own instance of Chrome, with a list of "E2E specs" for you to 
 ## Glossary
 
 #### spec
+
 Cypress considers each file a separate spec, or collection of tests.
 Specs are always run as a whole through `yarn cypress:open` or on the same machine through CI.
 
 #### Thenable
+
 Cypress queues commands to run in the browser using [Thenables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#thenables), not Promises.
 For this reason, you should not use `async/await` syntax in Cypress unless it is wholly-contained in a `cy.then` function argument.
 

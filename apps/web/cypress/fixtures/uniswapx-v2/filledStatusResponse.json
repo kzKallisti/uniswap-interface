@@ -33,10 +33,7 @@
         "decayEndTime": 1713904762,
         "exclusiveFiller": "0x0000000000000000000000000000000000000000",
         "inputOverride": "0",
-        "outputOverrides": [
-          "0",
-          "0"
-        ]
+        "outputOverrides": ["0", "0"]
       },
       "cosignature": "0x571fd27998496cb44ae42305113b2d43f79d82c4e9c277a8e07891bed2a02cfc7bbbfc0ee90e7514757267086f6b460f18f8a37de2cc6b31c63fc60086e8b35a1b"
     }

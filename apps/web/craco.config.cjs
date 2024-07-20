@@ -108,7 +108,7 @@ module.exports = {
         webpackConfig.plugins.push(
           new BundleAnalyzerPlugin({
             analyzerMode: 'json',
-          })
+          }),
         )
       }
 
@@ -241,7 +241,7 @@ module.exports = {
               // Optimize over all chunks, instead of async chunks (the default), so that initial chunks are also included.
               splitChunks: { chunks: 'all' },
             }
-          : {}
+          : {},
       )
 
       // Configure webpack resolution. webpackConfig.cache is unused with swc-loader, but the resolver can still cache:

@@ -92,9 +92,9 @@ describe('mini-portfolio activity history', () => {
                 ],
               },
             },
-          }
+          },
         ).as('graphql')
-      })
+      }),
   )
 
   it('should deduplicate activity history by nonce', () => {
