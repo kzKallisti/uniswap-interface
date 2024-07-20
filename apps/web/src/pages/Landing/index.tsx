@@ -1,17 +1,14 @@
-import { InterfacePageName } from '@uniswap/analytics-events'
 import { useWeb3React } from '@web3-react/core'
 import { useAccountDrawer } from 'components/AccountDrawer/MiniPortfolio/hooks'
 import { useRecentConnectorId } from 'components/Web3Provider/constants'
 import { useAccount } from 'hooks/useAccount'
 import usePrevious from 'hooks/usePrevious'
-import LandingV2 from 'pages/Landing/LandingV2'
 import { parse } from 'qs'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { TRANSITION_DURATIONS } from 'theme/styles'
 import { FeatureFlags } from 'uniswap/src/features/gating/flags'
 import { useFeatureFlag } from 'uniswap/src/features/gating/hooks'
-import Trace from 'uniswap/src/features/telemetry/Trace'
 
 export default function Landing() {
   const account = useAccount()
@@ -44,7 +41,7 @@ export default function Landing() {
           disconnect()
         }
       },
-      isExitAnimationEnabled ? TRANSITION_DURATIONS.slow : TRANSITION_DURATIONS.fast,
+      isExitAnimationEnabled ? TRANSITION_DURATIONS.slow : TRANSITION_DURATIONS.fast
     )
     return () => clearTimeout(timeoutId)
   }, [
@@ -58,16 +55,6 @@ export default function Landing() {
     isExitAnimationEnabled,
   ])
 
-  // Redirect to swap page if user is connected or has been recently
-  // The intro query parameter can be used to override this
-
-  if ((account.isConnected || hasRecentConnection) && !queryParams.intro) {
-    return <Navigate to={{ ...location, pathname: '/swap' }} replace />
-  }
-
-  return (
-    <Trace logImpression page={InterfacePageName.LANDING_PAGE}>
-      <LandingV2 transition={isExitAnimationEnabled && transition} />
-    </Trace>
-  )
+  // Redirect to swap page
+  return <Navigate to={{ ...location, pathname: '/swap' }} replace />
 }

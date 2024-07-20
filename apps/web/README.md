@@ -8,9 +8,12 @@ or visit [app.uniswap.org](https://app.uniswap.org).
 
 ## Running the interface locally
 
+- https://github.com/Uniswap/interface/pull/7637
+- https://github.com/Uniswap/interface/issues/7678
+
 ```bash
 yarn
-yarn web start
+yarn start
 ```
 
 ## Translations
